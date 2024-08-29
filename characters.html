@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Characters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	body{
+		background-image: url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/03/marvel-cinematic-universe.jpg");
+		margin: 0%;
+		color:lavender;
+		text-shadow: 1px 1px 0 black;
+	}
+	img{
+		width:200px;
+		height:200px;
+	}
+	li a{
+				color:lavender;
+				padding:10px;
+				font-family:"Lucida Console", "Courier New", monospace;
+			}
+			li a:hover {
+ 				background-color: darkmagenta;
+				padding: 25px;
+ 			}
+	ul {
+ 				list-style-type: none;
+ 				margin: 0;
+ 				padding: 25px;
+	 	 		overflow:hidden;
+ 				background-color:slateblue ;	
+ 			}
+			li{
+				float:left;
+				padding:20px;
+			}
+		.stick{
+				top:0px;
+				position:sticky;
+			}
+		a{
+			text-decoration:none;
+		}
+		.dropdown{
+			position: right;
+			display: inline-block;
+			text-align:center;
+			
+		}
+		.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: gray;
+		min-width: 100%;
+		box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.9);
+		}
+		.dropdown-content input:hover {
+		background-color: brown
+		}
+		.row {
+  display: flex;
+}
+			.dropdown ,.dropdown-content{
+				
+				text-align:center;
+				background-color:slateblue;
+				border:solid 2px blue;
+			}
+			.dropdown-content{
+				padding:60px;
+				display:none;
+			}
+			#back{
+				display:none;
+				background-color:pink;
+			}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+#box{
+			backdrop-filter: blur(15px);
+		}
+a {
+  box-shadow: inset 0 0 0 0 #54b3d6;
+  color: #54b3d6;
+  margin: 0 -.25rem;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+a:hover {
+  box-shadow: inset 100px 0 0 0 #54b3d6;
+  color: white;
+}
+h1:hover{
+background-color: darkmagenta;
+				padding: 25px;
+}
+</style>
+<script>
+			$(document).ready(function(){
+ 			
+			$("#i").click(function(){
+				$(this).after("<b>IRONMAN-Avengers</b>");
+			});
+			$("#c").click(function(){
+				$(this).after("<b>CAPTAIN AMERICA-Avengers</b>");
+			});
+			$("#t").click(function(){
+				$(this).after("<b>THOR-Avengers</b>");
+			});
+			$("#s").click(function(){
+				$(this).after("<b>SCARLET WITCH-Avengers</b>");
+			});
+			$("#doc").click(function(){
+				$(this).after("<b>DOCTOR STRANGE-Avengers</b>");
+			});
+			$("#l").click(function(){
+				$(this).after("<b>LOKI-God of Mischief</b>");
+			});
+			$("#ant").click(function(){
+				$(this).after("<b>ANTMAN-Avengers</b>");
+			});
+			$("#spi").click(function(){
+				$(this).after("<b>SPIDERMAN-Avengers</b>");
+			});
+			$("#hul").click(function(){
+				$(this).after("<b>HULK-Avengers</b>");
+			});
+
+			$("form").submit(function(event) {
+        var isValid = true;
+
+        // Check if any input field is empty
+        $('input').each(function() {
+          if (!$(this).val()) {
+            isValid = false;
+            $(this).addClass("error");
+          } else {
+            $(this).removeClass("error");
+          }
+        });
+
+        // Check email format
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test($("#email").val())) {
+          isValid = false;
+          $("#email").addClass("error");
+        } else {
+          $("#email").removeClass("error");
+        }
+
+        // Display error message if form is not valid
+        if (!isValid) {
+          $(".error-message").text("Please fill out all fields correctly.").show();
+          event.preventDefault(); // Prevent form submission
+        }
+	if (isValid) {
+          $(".error-message").text("Submitted!!!.").show();
+        }
+      })
+			});
+	$(document).ready(function(){
+			$("#sign").click(function(){
+					$(".dropdown").slideDown("slow");
+					$("#sign").hide();
+					$("#back").show();
+					$(".dropdown-content").show();
+					$(document).ready(function(){
+						$("#back").click(function(){
+						$(".dropdown").slideUp("slow");		
+						$("#sign").show();
+						$("#back").hide();
+							});
+					});
+				});
+			});
+</script>
+</head>
+<body>
+<div id="box">
+<div class="stick">
+		<ul>
+ 		 <li><a	href="frontHA3Q10.html">GO BACK</a></li>
+	 	 <li><a	href="frontHA3Q10.html">ABOUT MCU</a></li>
+	 	 <li><a	href="avengers.html">ABOUT AVENGERS</a></li>
+		 <li><a	href="moviesHA3Q10.html">LIST OF MOVIES</a></li>
+ 		</ul>
+		</div>
+<h1>WELCOME TO MARVEL CIENEMATIC UNIVERSE</h1>
+<button id="sign">Sign Up</button>
+<div class="dropdown">
+<div class="dropdown-content" style="display:none">
+<form class="form-box">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username" placeholder="User Name Required"><br>
+    <lable for="age">Age:</lable><br>
+    <input type="number" id="age" name="age" placeholder="Age Required"><br>
+    <lable for="phoneno">Phone No:</lable><br>
+    <input type="phone" id="phoneno" name="phoneno" placeholder="Phone Number Required"><br>
+    <lable for="password">Password:</lable><br>
+    <input type="text" id="password" name="password" placeholder="Password Required" pattern="(?=.\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"><br>
+    <lable for="gender">Gender:</lable><br>
+		<input	type="radio" id=“Gender" name=“gender” value="Male">Male</input>
+		<input	type="radio" id=“Gender" name=“gender” value="Female">Female</input><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" placeholder="Email ID Required" pattern="[a-z 0-9._+\_]+@[a-z0-9.\-]+\.[a-z]{2,}$"><br>
+
+    <input type="submit" value="Submit" id="submit">
+    <button id="back" style="display:none">Close</button>
+	<p class="error-message" style="color: red; display: none;"></p>
+  </form>
+</div>
+</div>
+
+<div class="row">
+  <div class="column">
+<h2 id="6">LOKI</h2>
+<img id="l" src="https://wallpapers.com/images/hd/marvel-loki-smpjj1ditautb6d6.jpg"><a href="loki.html" target="_blank"><button id="f">+</button></a>
+</div>
+ </div>
+<div class="row">
+  <div class="column">
+<h2 id="1">IRONMAN</h2>
+<img id="i" src="https://cdn.britannica.com/49/182849-050-4C7FE34F/scene-Iron-Man.jpg"><a href="ironman.html" target="_blank"><button id="a">+</button></a>
+ </div>
+
+  <div class="column">
+<h2 id="2">CAPTAIN AMERICA</h2>
+<img id="c" src="https://m.media-amazon.com/images/I/81M8l5kVdVL._AC_UF1000,1000_QL80_.jpg"><a href="captainamerica.html" target="_blank"><button id="b">+</button></a>
+ </div>
+ </div>
+<div class="row">
+  <div class="column">
+<h2 id="3">THOR</h2>
+<img id="t" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8qDmpB9rDkk9JctpTsJ3dLRWS8OKz93c4I37QM9_dVi8MYEsFXiHHCe0n4GUDsn9Dvhk&usqp=CAU"><a href="thor.html" target="_blank"><button id="c">+</button></a>
+</div>
+<div class="column">
+<h2 id="4">SCARLET WITCH</h2>
+<img id="s" src="https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Wanda_Maximoff_%28Earth-199999%29_from_Doctor_Strange_in_the_Multiverse_of_Madness_Promo_001.jpg"><a href="scarletwitch.html" target="_blank"><button id="d">+</button></a>
+</div>
+ </div>
+<div class="row">
+  <div class="column">
+<h2 id="5">DOCTOR STRANGE</h2>
+<img id="doc" src="https://cdn.kinocheck.com/i/3e1r3zcsy8.jpg"><a href="doctorstrange.html" target="_blank"><button id="e">+</button></a>
+</div>
+<div class="column">
+<h2 id="7">ANTMAN</h2>
+<img id="ant" src="https://playcontestofchampions.com/wp-content/uploads/2021/11/champion-ant-man.jpg"><a href="antman.html" target="_blank"><button id="g">+</button></a>
+</div>
+ </div>
+<div class="row">
+  <div class="column">
+<h2 id="8">SPIDERMAN</h2>
+<img id="spi" src="https://static.wikia.nocookie.net/spiderman-films/images/e/eb/Spider-Man_-_Profile_Pic.png/"><a href="spiderman.html" target="_blank"><button id="h">+</button></a>
+</div>
+<div class="column">
+<h2 id="9">HULK</h2>
+<img id="hul" src="https://images.squarespace-cdn.com/content/v1/51b3dc8ee4b051b96ceb10de/a22e9170-95b2-46f2-8291-3500a60af331/marvel-studios-is-reportedly-finally-developing-a-solo-hulk-movie.jpg"><a href="hulk.html" target="_blank"><button id="i">+</button></a>
+</div>
+ </div>
+ </div>
+</body>
+<script></script>
+</html>
